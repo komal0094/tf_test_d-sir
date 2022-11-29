@@ -8,15 +8,14 @@ resource "aws_instance" "dev-ec2" {
    user_data = <<-EOF
 #!/bin/bash
 apt update -y
+hostnamectl set-hostname ${each.value["webname"]}
 apt install nginx -y
 systemctl start nginx.service
-apt install mysql-sever -y 
-apt install php-fpm php-mysql -y
 apt install docker.io
 EOF
 
 tags = {
-    Name = "test-ec2-${each.value["pub-snet"]}"
+    Name = "test-ec2-${each.value["webname"]}"
     env = terraform.workspace
   }
 }

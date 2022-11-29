@@ -86,12 +86,15 @@ module "ec2" {
   ec2-sub = {
     test-ec2 = {
          pub-snet = lookup(module.nw.pub-snet-id, "pub-sub-1", null)
+         webname = "server1"
       },
       test1-ec2 = {
          pub-snet = lookup(module.nw.pub-snet-id, "pub-sub-2", null)
+         webname = "server2"
       },
       test2-ec2 = {
          pub-snet = lookup(module.nw.pub-snet-id, "pub-sub-3", null)
+         webname = "server3"
       }
   }
   sg = lookup(module.sg.output-sg, "ec2-sg", null)
