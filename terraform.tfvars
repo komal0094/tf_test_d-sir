@@ -72,4 +72,4 @@ sg-info = {
  
 ami-new = "ami-052efd3df9dad4825"
 instance-type = "t2.micro"
-key-pair = "tf_key"
+key-pair = "null"//
