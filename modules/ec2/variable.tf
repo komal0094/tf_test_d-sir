@@ -1,5 +1,5 @@
 variable "ami" {
-    
+  
 }
 variable "insta-type" {
     }

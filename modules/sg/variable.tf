@@ -2,7 +2,7 @@ variable "sg_details" {
     type = map(object({
         name = string
        description = string
-        vpc_id = string
+        #  vpc_id = string
         ingress_rules = list(object({
             from_port = number
             to_port   = number
@@ -15,5 +15,9 @@ variable "sg_details" {
         ))  
 
     }))
+  
+}
+variable "vpc-id" {
+    type = string
   
 }
