@@ -55,14 +55,16 @@ module "ec2" {
 
 
 //route 53 module
-# module "route53" {
-#   source = "./modules/route53"
-#   vpc-id = module.nw.vpc-id
-#   record = {
-#     rec = {
-#       record-id = lookup(module.ec2.ec2-pri-ip, "ec2-sub", null)
-#     }
-# }
-# }
+module "route53" {
+  source = "./modules/route53"
+  vpc-id = module.nw.vpc-id
+  # record = {
+  #   rec = {
+  #     record-id = lookup(module.ec2.ec2-pri-ip, "ec2-sub", null)
+  #   }
+   record1 = lookup(module.ec2.ec2-pri-ip, "test-ec2", null)
+
+}
+
 
 

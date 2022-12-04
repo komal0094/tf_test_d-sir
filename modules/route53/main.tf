@@ -17,5 +17,6 @@ resource "aws_route53_record" "record1" {
   name    = "server1.com"
   type    = "A"
   ttl     = 300
-  records = [for v in var.record : v.record-id]
+#   records = [for v in var.record : v.record-id]
+records = [var.record1]
 }

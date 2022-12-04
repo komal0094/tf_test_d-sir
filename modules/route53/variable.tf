@@ -1,6 +1,6 @@
 variable "vpc-id" {
   
 }
-variable "record" {
-  type = map
+variable "record1" {
+#   type = list(string)
 }
